@@ -152,7 +152,7 @@ const registerSubmitController = async (req, res) => {
       flag:flag,
     }).save();
 
-    await sendEmail(
+    sendEmail(
       email,
       "Welcome to Our Platform!",
       `Hello ${username}, welcome to DanaSetu! Your user type is ${usertype}.`
