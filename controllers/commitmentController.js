@@ -69,14 +69,14 @@ const commitmentcreator = async(req,res) => {
       postid:postid,
     }).save();
 
-    await sendEmail(
+    sendEmail(
       email,
       "New Connection!!!",
       `Hello ${user1},\n\nYour new connection is ${receiverdata.username}.\nDetails:\nPhone number: ${receiverdata.phoneno},\nLocation: ${receiverdata.location}`
     );
     
 
-  await sendEmail(
+  sendEmail(
     receiverdata.email,
     "New Connection!!!",
     `Hello ${receiverdata.username}, Your new connection is ${user1} for post:${posttitle}.`
